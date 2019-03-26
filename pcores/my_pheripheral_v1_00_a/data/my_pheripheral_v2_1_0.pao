@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          D:/RA19-2015/lab3/pcores/my_pheripheral_v1_00_a/data/my_pheripheral_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu Mar 21 11:23:05 2019 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib my_pheripheral_v1_00_a user_logic vhdl
+lib my_pheripheral_v1_00_a my_pheripheral vhdl

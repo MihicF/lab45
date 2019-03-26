@@ -1,0 +1,9 @@
+-batch 
+-create my_pheripheral 
+-ver 1.00.a 
+-dir "D:\RA19-2015\lab3" 
+-lang vhdl 
+-bus axi4lite s 
+-reg 1 
+-xps 
+-driver 

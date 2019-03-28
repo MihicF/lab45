@@ -59,6 +59,9 @@ PORT S_AXI_AWREADY = AWREADY, DIR = O, BUS = S_AXI
 PORT clk_i = "", DIR = I, SIGIS = CLK
 PORT reset_n_i = "", DIR = I, SIGIS = RST
 
+PORT direct_mode_i = "", DIR = I
+PORT display_mode_i = "", DIR = I
+
 PORT vga_hsync_o = "", DIR = O
 PORT vga_vsync_o = "", DIR = O
 PORT blank_o = "", DIR = O

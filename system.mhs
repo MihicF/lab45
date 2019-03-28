@@ -23,6 +23,14 @@
  PORT my_peripheral2_0_vga_hsync_o_pin = my_peripheral2_0_vga_hsync_o, DIR = O
  PORT my_peripheral2_0_vga_vsync_o_pin = my_peripheral2_0_vga_vsync_o, DIR = O
  PORT my_peripheral2_0_blank_o_pin = my_peripheral2_0_blank_o, DIR = O
+ PORT my_peripheral2_0_pix_clock_o_pin = my_peripheral2_0_pix_clock_o, DIR = O
+ PORT my_peripheral2_0_psave_o_pin = my_peripheral2_0_psave_o, DIR = O
+ PORT my_peripheral2_0_sync_o_pin = my_peripheral2_0_sync_o, DIR = O
+ PORT my_peripheral2_0_red_o_pin = my_peripheral2_0_red_o, DIR = O, VEC = [7:0]
+ PORT my_peripheral2_0_green_o_pin = my_peripheral2_0_green_o, DIR = O, VEC = [7:0]
+ PORT my_peripheral2_0_blue_o_pin = my_peripheral2_0_blue_o, DIR = O, VEC = [7:0]
+ PORT my_peripheral2_0_direct_mode_i_pin = net_my_peripheral2_0_direct_mode_i_pin, DIR = I
+ PORT my_peripheral2_0_display_mode_i_pin = net_my_peripheral2_0_display_mode_i_pin, DIR = I
 
 
 BEGIN proc_sys_reset
@@ -163,17 +171,6 @@ BEGIN axi_gpio
  PORT GPIO_IO_I = DIP_Switches_TRI_I
 END
 
-BEGIN my_pheripheral
- PARAMETER INSTANCE = my_pheripheral_0
- PARAMETER HW_VER = 1.00.a
- PARAMETER C_BASEADDR = 0x73c00000
- PARAMETER C_HIGHADDR = 0x73c0ffff
- BUS_INTERFACE S_AXI = axi4lite_0
- PORT S_AXI_ACLK = clk_100_0000MHz
- PORT LED_Data = my_pheripheral_0_LED_Data_0
- PORT DIP_Data = my_pheripheral_0_DIP_Data
-END
-
 BEGIN my_peripheral2
  PARAMETER INSTANCE = my_peripheral2_0
  PARAMETER HW_VER = 1.00.a
@@ -186,5 +183,13 @@ BEGIN my_peripheral2
  PORT vga_hsync_o = my_peripheral2_0_vga_hsync_o
  PORT vga_vsync_o = my_peripheral2_0_vga_vsync_o
  PORT blank_o = my_peripheral2_0_blank_o
+ PORT pix_clock_o = my_peripheral2_0_pix_clock_o
+ PORT psave_o = my_peripheral2_0_psave_o
+ PORT sync_o = my_peripheral2_0_sync_o
+ PORT red_o = my_peripheral2_0_red_o
+ PORT green_o = my_peripheral2_0_green_o
+ PORT blue_o = my_peripheral2_0_blue_o
+ PORT direct_mode_i = net_my_peripheral2_0_direct_mode_i_pin
+ PORT display_mode_i = net_my_peripheral2_0_display_mode_i_pin
 END
 

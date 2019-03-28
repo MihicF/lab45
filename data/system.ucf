@@ -14,7 +14,8 @@ NET CLK_N LOC = AF14 | IOSTANDARD = LVDS_33;
 NET CLK_P LOC = AD14 | IOSTANDARD = LVDS_33; 
 NET RESET LOC = AE24 | IOSTANDARD = LVCMOS33; 
 NET RS232_Uart_1_sin LOC = A21 | IOSTANDARD = LVTTL; 
-NET RS232_Uart_1_sout LOC = A20 | IOSTANDARD = LVTTL; NET DIP_Switches_TRI_I(0) LOC = W19 | IOSTANDARD = LVTTL; 
+NET RS232_Uart_1_sout LOC = A20 | IOSTANDARD = LVTTL; 
+NET DIP_Switches_TRI_I(0) LOC = W19 | IOSTANDARD = LVTTL; 
 
 NET DIP_Switches_TRI_I(1) LOC = AC24 | IOSTANDARD = LVTTL; 
 NET DIP_Switches_TRI_I(2) LOC = AC23 | IOSTANDARD = LVTTL; 
@@ -33,10 +34,18 @@ NET LEDS_TRI_O(5) LOC = K24 | IOSTANDARD = LVTTL;
 NET LEDS_TRI_O(6) LOC = H24 | IOSTANDARD = LVTTL; 
 NET LEDS_TRI_O(7) LOC = D24 | IOSTANDARD = LVTTL;
 
+NET my_peripheral2_0_direct_mode_i_pin LOC = Y24 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_display_mode_i_pin LOC = K19 | IOSTANDARD = LVTTL;
 
-NET DIP_Switches_TRI_I(1) LOC = Y24 | IOSTANDARD = LVTTL; 
-NET DIP_Switches_TRI_I(2) LOC = K19 | IOSTANDARD = LVTTL; 
-NET DIP_Switches_TRI_I(3) LOC = V24 | IOSTANDARD = LVTTL; 
-Y24
-K19
-V24
+NET my_peripheral2_0_clk_i_pin LOC =  M21 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_reset_n_i_pin LOC =  AE24 | IOSTANDARD = LVTTL; 
+
+NET my_peripheral2_0_vga_hsync_o_pin LOC =  V24 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_vga_vsync_o_pin LOC =  T18 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_blank_o_pin LOC =  D18 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_pix_clock_o_pin LOC =  V18 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_psave_o_pin LOC =  W18 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_sync_o_pin LOC =  D21 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_red_o_pin LOC =  C21 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_green_o_pin LOC =  F24 | IOSTANDARD = LVTTL; 
+NET my_peripheral2_0_blue_o_pin LOC =  AD24 | IOSTANDARD = LVTTL; 

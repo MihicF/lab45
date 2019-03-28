@@ -116,6 +116,9 @@ entity my_peripheral2 is
   (
     -- ADD USER GENERICS BELOW THIS LINE ---------------
     --USER generics added here
+	 RES_TYPE             : natural := 1;
+    TEXT_MEM_DATA_WIDTH  : natural := 6;
+    GRAPH_MEM_DATA_WIDTH : natural := 32;
     -- ADD USER GENERICS ABOVE THIS LINE ---------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -138,6 +141,20 @@ entity my_peripheral2 is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
+	 direct_mode_i  : in  std_logic;
+	 display_mode_i : in std_logic_vector(1 downto 0);
+	 clk_i          : in  std_logic;
+    reset_n_i      : in  std_logic;
+    -- vga
+    vga_hsync_o    : out std_logic;
+    vga_vsync_o    : out std_logic;
+    blank_o        : out std_logic;
+    pix_clock_o    : out std_logic;
+    psave_o        : out std_logic;
+    sync_o         : out std_logic;
+    red_o          : out std_logic_vector(7 downto 0);
+    green_o        : out std_logic_vector(7 downto 0);
+    blue_o         : out std_logic_vector(7 downto 0);
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -293,6 +310,14 @@ begin
     (
       -- MAP USER GENERICS BELOW THIS LINE ---------------
       --USER generics mapped here
+		 RES_TYPE             => RES_TYPE,
+		 H_RES                => H_RES,
+		 V_RES                => V_RES,
+		 MEM_ADDR_WIDTH       => MEM_ADDR_WIDTH,
+		 GRAPH_MEM_ADDR_WIDTH => GRAPH_MEM_ADDR_WIDTH,
+		 TEXT_MEM_DATA_WIDTH  => TEXT_MEM_DATA_WIDTH,
+		 GRAPH_MEM_DATA_WIDTH => GRAPH_MEM_DATA_WIDTH,
+		 MEM_SIZE             => MEM_SIZE,
       -- MAP USER GENERICS ABOVE THIS LINE ---------------
 
       C_NUM_REG                      => USER_NUM_REG,
@@ -302,6 +327,43 @@ begin
     (
       -- MAP USER PORTS BELOW THIS LINE ------------------
       --USER ports mapped here
+		
+		 clk_i              => clk_i,
+		 reset_n_i          => reset_n_i,
+		 --
+		 direct_mode_i      => direct_mode_i,
+		 dir_red_i          => dir_red,
+		 dir_green_i        => dir_green,
+		 dir_blue_i         => dir_blue,
+		 dir_pixel_column_o => dir_pixel_column,
+		 dir_pixel_row_o    => dir_pixel_row,
+		 -- cfg
+		 display_mode_i     => display_mode_i,  -- 01 - text mode,  - graphics mode, 11 - text & graphics
+		 -- text mode interface
+		 text_addr_i        => char_address,
+		 text_data_i        => char_value,
+		 text_we_i          => char_we,
+		 -- graphics mode interface
+		 graph_addr_i       => pixel_address,
+		 graph_data_i       => pixel_value,
+		 graph_we_i         => pixel_we,
+		 -- cfg
+		 font_size_i        => font_size,
+		 show_frame_i       => show_frame,
+		 foreground_color_i => foreground_color,
+		 background_color_i => background_color,
+		 frame_color_i      => frame_color,
+		 -- vga
+		 vga_hsync_o        => vga_hsync_o,
+		 vga_vsync_o        => vga_vsync_o,
+		 blank_o            => blank_o,
+		 pix_clock_o        => pix_clock_s,
+		 vga_rst_n_o        => vga_rst_n_s,
+		 psave_o            => psave_o,
+		 sync_o             => sync_o,
+		 red_o              => red_o,
+		 green_o            => green_o,
+		 blue_o             => blue_o,  
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

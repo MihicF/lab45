@@ -15,3 +15,8 @@ lib my_peripheral2_v1_00_a vga vhdl
 lib my_peripheral2_v1_00_a text_mem vhdl
 lib my_peripheral2_v1_00_a char_rom vhdl
 lib my_peripheral2_v1_00_a graphics_mem vhdl
+
+lib my_peripheral2_v1_00_a dcm25MHz vhdl
+lib my_peripheral2_v1_00_a dcm50MHz vhdl
+lib my_peripheral2_v1_00_a dcm75MHz vhdl
+lib my_peripheral2_v1_00_a dcm108MHz vhdl
